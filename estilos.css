@@ -1,0 +1,560 @@
+:root {
+    --morado: #321044;
+    --morado-claro: #6c247b;
+    --rosa: #ed1978;
+    --rosa-claro: #ff5ba5;
+    --naranja: #ff781e;
+    --oro: #ffd16a;
+    --crema: #fff0d5;
+    --texto: #35152d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--crema);
+    background:
+        radial-gradient(ellipse at top, #57275e, transparent 65%),
+        linear-gradient(150deg, #160a23, #2b1038 60%, #15091d);
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.encabezado {
+    text-align: center;
+    padding: 0 18px 25px;
+    background: linear-gradient(180deg, #170921, #391440);
+    border-bottom: 3px solid var(--oro);
+}
+
+.papel-picado {
+    margin: 0 -18px 22px;
+    padding: 12px 5px;
+    overflow: hidden;
+    color: white;
+    background: linear-gradient(90deg, #ff7a22, #d9278a, #6d2eb0, #16a9d3);
+    font-size: clamp(19px, 4vw, 31px);
+    letter-spacing: 4px;
+    border-bottom: 4px solid var(--oro);
+}
+
+.etiqueta {
+    color: var(--oro);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.encabezado h1 {
+    margin: 8px 0;
+    font-size: clamp(29px, 5vw, 52px);
+    line-height: 1.2;
+    color: white;
+    text-shadow: 0 0 18px #ff8b35a0;
+}
+
+.subtitulo {
+    margin: 8px 0;
+    font-size: clamp(16px, 3vw, 23px);
+    font-weight: bold;
+}
+
+main {
+    width: min(1100px, 94%);
+    margin: auto;
+}
+
+/* ALTAR PRINCIPAL */
+
+.altar-principal {
+    position: relative;
+    margin: 25px auto 45px;
+    padding: 25px 16px;
+    overflow: hidden;
+    border: 5px double var(--oro);
+    border-radius: 22px;
+    background:
+        radial-gradient(circle at 15% 30%, #ff741f38, transparent 28%),
+        radial-gradient(circle at 85% 35%, #ff741f38, transparent 28%),
+        linear-gradient(145deg, #46172d, #24102e 60%, #45172a);
+    box-shadow: 0 0 0 5px #e72a8a26, 0 12px 40px #0008;
+}
+
+.altar-principal::before {
+    content: "🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼 🌼";
+    display: block;
+    text-align: center;
+    font-size: clamp(17px, 3vw, 27px);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.carrusel {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 470px) 52px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.marco {
+    min-width: 0;
+    padding: 18px;
+    border: 7px solid var(--oro);
+    border-radius: 18px;
+    text-align: center;
+    color: var(--texto);
+    background: linear-gradient(145deg, #fff4df, #f5d6a6);
+    box-shadow: 0 0 25px #ffbd5b65, inset 0 0 0 3px white;
+}
+
+.foto-marco {
+    padding: 7px;
+    background: linear-gradient(135deg, #f6b84d, #fff6e3, #d38a30);
+    border: 2px solid #b77829;
+    border-radius: 9px;
+}
+
+.foto-marco img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 3px solid white;
+    border-radius: 4px;
+    background: #e8d3b3;
+}
+
+.marco h2 {
+    margin: 13px 0 4px;
+    font-size: 21px;
+}
+
+.marco p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.flecha {
+    width: 49px;
+    height: 49px;
+    padding: 0;
+    border: 3px solid white;
+    border-radius: 50%;
+    color: white;
+    background: linear-gradient(145deg, var(--rosa-claro), #c5005b);
+    font-size: 22px;
+    box-shadow: 0 0 16px #ff278c70;
+    transition: transform .2s, filter .2s;
+}
+
+.flecha:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.punto {
+    width: 17px;
+    height: 17px;
+    padding: 0;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: #aaa;
+}
+
+.punto.activo {
+    background: var(--rosa);
+    box-shadow: 0 0 10px #ed1978a0;
+}
+
+.boton-recuerdo,
+.boton-musica {
+    border: 3px solid white;
+    border-radius: 40px;
+    color: white;
+    background: linear-gradient(135deg, #ff4d9b, #d50060);
+    font-weight: 800;
+    box-shadow: 0 0 0 3px #ed197855, 0 7px 18px #0004;
+    transition: transform .2s, filter .2s;
+}
+
+.boton-recuerdo {
+    padding: 10px 20px;
+    margin-top: 5px;
+}
+
+.boton-musica {
+    min-width: min(320px, 90%);
+    padding: 15px 24px;
+    font-size: 18px;
+}
+
+.boton-recuerdo:hover,
+.boton-musica:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.15);
+}
+
+.decoracion {
+    position: absolute;
+    top: 45%;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    font-size: 32px;
+    filter: drop-shadow(0 0 8px #ff8b3540);
+}
+
+.decoracion-izquierda {
+    left: 2px;
+}
+
+.decoracion-derecha {
+    right: 2px;
+}
+
+.frase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 25px auto;
+    padding: 12px 22px;
+    border: 3px solid var(--oro);
+    border-radius: 13px;
+    color: #28142b;
+    background: linear-gradient(135deg, #fff2d8, #ffdfa4);
+    text-align: center;
+    box-shadow: 0 6px 18px #0004;
+}
+
+.controles-musica {
+    text-align: center;
+    margin-top: 25px;
+}
+
+#estadoMusica {
+    min-height: 22px;
+    font-size: 13px;
+    color: #f4d8ff;
+}
+
+/* SIGNIFICADO */
+
+.significado {
+    padding: 30px 0 45px;
+    text-align: center;
+}
+
+.significado > h2 {
+    color: var(--oro);
+    font-size: clamp(25px, 4vw, 36px);
+}
+
+.significado-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    text-align: center;
+}
+
+.simbolo {
+    padding: 22px 13px;
+    border: 1px solid #ffd16a65;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #3b1b4a, #24102f);
+    box-shadow: 0 7px 22px #0003;
+    transition: transform .2s;
+}
+
+.simbolo:hover {
+    transform: translateY(-5px);
+}
+
+.simbolo span {
+    font-size: 38px;
+}
+
+.simbolo h3 {
+    color: var(--oro);
+}
+
+.simbolo p {
+    font-size: 14px;
+    color: #eadcf5;
+}
+
+/* IMAGEN DE REFERENCIA */
+
+.referencia {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ffd16a55;
+    border-radius: 12px;
+    background: #24102f;
+}
+
+.referencia summary {
+    color: var(--oro);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.referencia img {
+    display: block;
+    width: min(100%, 600px);
+    height: auto;
+    margin: 18px auto 5px;
+    border-radius: 10px;
+}
+
+/* MENSAJE FINAL */
+
+.mensaje-final {
+    margin: 30px 0 45px;
+    padding: 30px 15px;
+    border: 2px solid var(--oro);
+    border-radius: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #4d1948, #281038);
+}
+
+.mensaje-final h2 {
+    color: var(--oro);
+    font-size: clamp(22px, 4vw, 34px);
+}
+
+.mensaje-final > div {
+    font-size: 28px;
+}
+
+footer {
+    padding: 22px 12px;
+    border-top: 3px solid var(--oro);
+    text-align: center;
+    background: #16091f;
+}
+
+/* VENTANA DE DEDICATORIA */
+
+.ventana-recuerdo {
+    width: min(420px, 90%);
+    padding: 25px;
+    border: 3px solid var(--oro);
+    border-radius: 20px;
+    text-align: center;
+    color: var(--crema);
+    background: linear-gradient(145deg, #461b51, #21102e);
+}
+
+.ventana-recuerdo::backdrop {
+    background: #100619dd;
+    backdrop-filter: blur(4px);
+}
+
+.ventana-recuerdo > span {
+    font-size: 45px;
+}
+
+.ventana-recuerdo h2 {
+    color: var(--oro);
+}
+
+.cerrar {
+    display: block;
+    margin-left: auto;
+    border: 0;
+    color: white;
+    background: transparent;
+    font-size: 23px;
+}
+
+.boton-cerrar {
+    padding: 10px 22px;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    background: var(--rosa);
+    font-weight: bold;
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 760px) {
+    .decoracion {
+        display: none;
+    }
+
+    .carrusel {
+        grid-template-columns: 38px minmax(0, 1fr) 38px;
+        gap: 6px;
+    }
+
+    .flecha {
+        width: 36px;
+        height: 36px;
+        font-size: 17px;
+    }
+
+    .marco {
+        padding: 10px;
+        border-width: 4px;
+    }
+
+    .foto-marco img {
+        height: 260px;
+    }
+
+    .significado-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .frase {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 420px) {
+    .foto-marco img {
+        height: 210px;
+    }
+
+    .marco h2 {
+        font-size: 17px;
+    }
+
+    .boton-musica {
+        font-size: 15px;
+    }
+
+    .papel-picado {
+        letter-spacing: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+    /* ==========================================
+   GALERÍA LATERAL DE MI OFRENDA
+   Compatible con el diseño morado y dorado
+========================================== */
+
+.altar-principal {
+    position: relative;
+}
+
+/* Galería a la derecha en computadora */
+
+.galeria-lateral {
+    position: absolute;
+    top: 100px;
+    right: 18px;
+    width: 155px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 3;
+}
+
+.galeria-lateral h3 {
+    margin: 0;
+    color: #ffd16a;
+    text-align: center;
+    font-size: 14px;
+    text-shadow: 0 0 10px #ff812e70;
+}
+
+.foto-lateral {
+    padding: 7px;
+    border: 2px solid #ffd16a;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #fff0d5, #e7b5ce);
+    box-shadow: 0 0 15px #ffb84d50;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.foto-lateral:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 0 22px #ffb84d90;
+}
+
+.foto-lateral img {
+    display: block;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid white;
+    border-radius: 7px;
+}
+
+.foto-lateral p {
+    margin: 6px 0 2px;
+    color: #35152d;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* Dejar espacio para las fotos en computadora */
+
+@media (min-width: 1100px) {
+    .carrusel {
+        margin-right: 165px;
+    }
+}
+
+/* En pantallas medianas, las fotos van debajo del carrusel */
+
+@media (max-width: 1099px) {
+    .galeria-lateral {
+        position: static;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin: 20px auto;
+    }
+
+    .galeria-lateral h3 {
+        grid-column: 1 / -1;
+        font-size: 17px;
+    }
+
+    .foto-lateral img {
+        height: 120px;
+    }
+
+    .carrusel {
+        margin-right: 0;
+    }
+}
+
+}

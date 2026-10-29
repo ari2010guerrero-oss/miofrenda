@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Ofrenda Interactiva</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <div class="papel-picado" aria-hidden="true">
+        </div>
+
+        <p class="etiqueta">TRADICIÓN • MEMORIA • AMOR</p>
+        <h1>🌼 Mi Ofrenda Interactiva 🌼</h1>
+        <p class="subtitulo">Un recuerdo que vive en el corazón</p>
+    </header>
+
+    <main>
+        <section class="altar-principal">
+            <div class="decoracion decoracion-izquierda" aria-hidden="true">
+                🏵️ 🌼 🕯️ 🌼 💀
+            </div>
+
+            <div class="carrusel">
+                <button id="anterior" class="flecha"
+                        type="button" aria-label="Recuerdo anterior">
+                    ❮
+                </button>
+
+                <article class="marco">
+                    <div class="foto-marco">
+                        <img id="fotoPrincipal"
+                             src="img/OIP.webp"
+                             alt="Fotografía de un recuerdo especial">
+                    </div>
+
+                    <h2 id="tituloFoto">Siempre en nuestro corazón</h2>
+
+                    <p id="descripcionFoto">
+                        Tu recuerdo ilumina nuestra ofrenda.
+                    </p>
+
+                    <div id="indicadores" class="indicadores">
+                        <button class="punto activo" type="button"
+                                aria-label="Mostrar recuerdo 1"></button>
+                        <button class="punto" type="button"
+                                aria-label="Mostrar recuerdo 2"></button>
+                        <button class="punto" type="button"
+                                aria-label="Mostrar recuerdo 3"></button>
+                    </div>
+
+                    <button id="verRecuerdo" class="boton-recuerdo"
+                            type="button">
+                        💌 Ver dedicatoria
+                    </button>
+                </article>
+
+                <button id="siguiente" class="flecha"
+                        type="button" aria-label="Recuerdo siguiente">
+                    ❯
+                </button>
+            </div>
+
+            <div class="decoracion decoracion-derecha" aria-hidden="true">
+                💀 🌼 🕯️ 🌼 🏵️
+            </div>
+
+            <div class="frase">
+                <span>🕯️</span>
+                <strong>Siempre presente en nuestra memoria</strong>
+                <span>🌼</span>
+            </div>
+
+            <div class="controles-musica">
+                <button id="botonMusica" class="boton-musica"
+                        type="button">
+                    ▶️ Reproducir música
+                </button>
+
+              <audio id="musica" loop preload="none">
+    <source
+        src="https://youtu.be/RoP51zLW5ns?list=RDRoP51zLW5ns"
+        type="audio/mpeg">
+</audio>
+
+                <p id="estadoMusica">
+                    Pulsa el botón para escuchar la música.
+                </p>
+            </div>
+        </section>
+
+        <section class="significado">
+            <p class="etiqueta">NUESTRAS TRADICIONES</p>
+            <h2>El significado de nuestra ofrenda</h2>
+
+            <div class="significado-grid">
+                <article class="simbolo">
+                    <span>🌼</span>
+                    <h3>Cempasúchil</h3>
+                    <p>se cree que su color intenso y su aroma ayuda a guiar a las 
+                        almas del difunto hacia a la ofrenda .</p>
+                </article>
+
+                <article class="simbolo">
+                    <span>🕯️</span>
+                    <h3>Veladoras</h3>
+                    <p>Representan la luz y la esperanza, representa la claridad que ilumina 
+                        el camino de las almas para que encuentre su 
+                        ofrenda.</p>
+                </article>
+
+                <article class="simbolo">
+                    <span>💧</span>
+                    <h3>Agua</h3>
+                    <p>Es un elemento tradicional de la ofrenda se coloca para que las 
+                        almas, despues de su largo viaje desde el mas alla puedan refrescarse 
+                        y recuperar fuerzas.</p>
+                </article>
+
+                <article class="simbolo">
+                    <span>🍞</span>
+                    <h3>Pan de muerto</h3>
+                    <p>Forma parte de esta celebración mexicana que representa la union y el compartir entre vivos y muertos 
+                        pues el pan es alimento basico que se ofrece con cariño.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Imagen de referencia que compartiste.
+             Guarda tu captura en img/referencia-ofrenda.jpeg -->
+        <details class="referencia">
+            <summary>Feliz dia para recordas a todos aquellos que amamos</summary>
+            <img src="https://tse3.mm.bing.net/th/id/OIP.kSEPnw9i1Am-w290FwQXWwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                 alt="Imagen de referencia para el diseño de la ofrenda">
+        </details>
+
+        <section class="mensaje-final">
+            <div>🌼 🕯️ 💀 🕯️ 🌼</div>
+            <h2>Mientras haya memoria, habrá presencia</h2>
+            <p>Recordar también es una forma de amar.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Hecho con amor para honrar nuestras tradiciones mexicanas 🇲🇽</p>
+    </footer>
+
+    <dialog id="ventanaRecuerdo" class="ventana-recuerdo">
+        <button id="cerrarRecuerdo" class="cerrar"
+                type="button" aria-label="Cerrar">✕</button>
+        <span>🌼</span>
+        <h2 id="tituloDedicatoria">Un recuerdo especial</h2>
+        <p id="textoDedicatoria"></p>
+        <button id="botonCerrar" class="boton-cerrar"
+                type="button">Cerrar</button>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html>
